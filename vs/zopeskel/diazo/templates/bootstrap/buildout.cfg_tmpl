@@ -25,7 +25,7 @@ url = http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
 [npm]
 recipe = plone.recipe.command
 command =
-    cd \${buildout:directory}/src/${namespace_package}.${package}/${namespace_package}/${package}
+    cd \${buildout:directory}/${namespace_package}/${package}
     \${buildout:parts-directory}/nodejs/bin/npm install
     node_modules/bower/bin/bower install
     node_modules/grunt-cli/bin/grunt less
