@@ -74,7 +74,7 @@ This will create a Python package with a directory structure like this::
     │       │   │   ├── apple-touch-icon.png
     │       │   │   └── apple-touch-icon-precomposed.png
     │       │   ├── index.html
-    │       │   ├── manifest.cfg_tmpl
+    │       │   ├── manifest.cfg
     │       │   ├── preview.png
     │       │   ├── rules.xml
     │       │   └── static
