@@ -103,40 +103,15 @@ This will create a Python package with a directory structure like this::
 Generate the theme
 ==================
 
-Add these lines to your development buildout::
+To genereate the theme you can switch to your newly created product annd run
+buildout, e.g.::
 
-    [buildout]
+    $ cd src/my.theme
+    $ python bootstrap
+    $ ./bin/buildout
 
-    develop =
-        src/my.theme
-
-    parts =
-        …
-        instance
-        nodejs
-        npm
-
-    [instance]
-    eggs =
-        …
-        my.theme
-
-    [nodejs]
-    recipe = zc.recipe.cmmi
-    url = http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
-    
-    [npm]
-    recipe = plone.recipe.command
-    command =
-        cd ${buildout:directory}/src/my.theme/my/theme/
-        ${buildout:parts-directory}/nodejs/bin/npm install 
-        node_modules/bower/bin/bower install
-        node_modules/grunt-cli/bin/grunt less
-        node_modules/grunt-cli/bin/grunt copy
-
-Re-run buildout, e.g. with::
-
-    $ ./bin/buildout -c devel.cfg
+Now you can start the instance and activate ``my.theme`` in *control panel*  →
+*Extensions*.
 
 Customize the theme
 ===================
