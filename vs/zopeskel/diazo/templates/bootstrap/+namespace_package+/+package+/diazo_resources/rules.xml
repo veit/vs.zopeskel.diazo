@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <!-- Rules for the standard Plone pages -->
+    <rules css:if-content="#visual-portal-wrapper">
+        
+        <notheme if="$ajax_load" />
+        <theme href="index.html" />
+
+        <!-- Attributes -->
+        <copy attributes="*" theme="/html" content="/html"/>
+        <!-- Base tag -->
+        <before theme="/html/head/title" content="/html/head/base"/>
+        <!-- Title -->
+        <replace theme="/html/head/title" content="/html/head/title" />
+        <!-- Pull in Plone Meta -->
+        <after theme-children="/html/head" content="/html/head/meta" />
+        <!-- dont use Plone icons, use the theme -->
+        <drop css:content="head link[rel='apple-touch-icon']" />
+        <drop css:content="head link[rel='shortcut icon']" />
+        <!-- CSS -->
+        <before theme-children="/html/head" content="/html/head/link" />
+
+        <!-- Copy over the id/class attributes on the body tag.
+             This is important e.g. for per-section styling -->
+        <copy attributes="*" css:content="body" css:theme="body" />
+
+        <!-- Copy script tags from Plone head to end of body -->
+        <after theme-children="html/body" content="html/head/script" />
+
+        <!-- Move inline scripts in content to end of body -->
+        <drop content="body/script" />
+        <after theme-children="html/body" content="html/body/script" method="raw" />
+
+        <!-- This rule pulls in the whole Plone layout. You'll typically replace ist
+             with rules that copy particular parts of the content into particular
+             parts of your theme.
+         -->
+        <after theme="body/h1" css:content="#visual-portal-wrapper" />
+
+    </rules>
+</rules>
+
