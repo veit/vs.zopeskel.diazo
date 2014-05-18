@@ -25,9 +25,9 @@ url = http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
 [npm]
 recipe = plone.recipe.command
 command =
-    cd ${buildout:directory}/src/vs.basetheme
-    ${buildout:parts-directory}/nodejs/bin/npm install -g bower
-    ${buildout:parts-directory}/nodejs/bin/bower install
+    cd \${buildout:directory}/src/${namespace_package}.${package}/${namespace_package}/${package}
+    \${buildout:parts-directory}/nodejs/bin/npm install -g bower
+    \${buildout:parts-directory}/nodejs/bin/bower install
 
 [scripts]
 recipe = zc.recipe.egg
