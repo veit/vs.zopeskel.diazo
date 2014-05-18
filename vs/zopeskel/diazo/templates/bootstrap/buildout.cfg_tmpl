@@ -26,8 +26,10 @@ url = http://nodejs.org/dist/v0.10.28/node-v0.10.28.tar.gz
 recipe = plone.recipe.command
 command =
     cd \${buildout:directory}/src/${namespace_package}.${package}/${namespace_package}/${package}
-    \${buildout:parts-directory}/nodejs/bin/npm install -g bower
-    \${buildout:parts-directory}/nodejs/bin/bower install
+    \${buildout:parts-directory}/nodejs/bin/npm install
+    node_modules/bower/bin/bower install
+    node_modules/grunt-cli/bin/grunt less
+    node_modules/grunt-cli/bin/grunt copy
 
 [scripts]
 recipe = zc.recipe.egg

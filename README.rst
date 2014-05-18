@@ -129,19 +129,14 @@ Add these lines to your development buildout::
     recipe = plone.recipe.command
     command =
         cd ${buildout:directory}/src/my.theme/my/theme/
-        ${buildout:parts-directory}/nodejs/bin/npm install -g bower
-        ${buildout:parts-directory}/nodejs/bin/bower install
+        ${buildout:parts-directory}/nodejs/bin/npm install 
+        node_modules/bower/bin/bower install
+        node_modules/grunt-cli/bin/grunt less
+        node_modules/grunt-cli/bin/grunt copy
 
 Re-run buildout, e.g. with::
 
     $ ./bin/buildout -c devel.cfg
-
-Now you can change to the directory ``src/my.theme/my/theme``, generate the css
-files and copy all the files the `static`` directory`::
-
-    $ cd src/my.theme/my/theme
-    $ node_modules/grunt-cli/bin/grunt less
-    $ node_modules/grunt-cli/bin/grunt copy
 
 Customize the theme
 ===================
