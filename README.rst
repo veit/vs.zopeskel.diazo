@@ -17,6 +17,11 @@ Also, you should use Less variables, mixins, etc. Therefore, the
 `Bower <http://bower.io/>`_ and `Grunt <http://gruntjs.com/>`_ to recompile the
 bootstrap Less files.
 
+Requirements
+============
+
+* This package is only compatible with ZopeSkel<3.0.
+
 Installation
 ============
 
@@ -24,16 +29,19 @@ Add these lines to your development buildout::
 
     [buildout]
     parts =
-       diazo-zopeskel
+        zopeskel
 
-    [diazo-zopeskel]
+    [zopeskel]
     recipe = zc.recipe.egg
+    unzip = true
     eggs =
-       vs.zopeskel.diazo
+        PasteScript
+        ZopeSkel
+        vs.zopeskel.diazo
 
 Re-run buildout, e.g. with::
 
-    $ ./bin/devel.cfg
+    $ ./bin/buildout -c devel.cfg
 
 Create add on
 =============
@@ -98,10 +106,20 @@ Generate the theme
 Add these lines to your development buildout::
 
     [buildout]
+
+    develop =
+        src/my.theme
+
     parts =
         …
+        instance
         nodejs
         npm
+
+    [instance]
+    eggs =
+        …
+        my.theme
 
     [nodejs]
     recipe = zc.recipe.cmmi
@@ -110,13 +128,20 @@ Add these lines to your development buildout::
     [npm]
     recipe = plone.recipe.command
     command =
-        cd ${buildout:directory}/src/my.theme
+        cd ${buildout:directory}/src/my.theme/my/theme/
         ${buildout:parts-directory}/nodejs/bin/npm install -g bower
         ${buildout:parts-directory}/nodejs/bin/bower install
 
 Re-run buildout, e.g. with::
 
-    $ ./bin/devel.cfg
+    $ ./bin/buildout -c devel.cfg
+
+Now you can change to the directory ``src/my.theme/my/theme``, generate the css
+files and copy all the files the `static`` directory`::
+
+    $ cd src/my.theme/my/theme
+    $ node_modules/grunt-cli/bin/grunt less
+    $ node_modules/grunt-cli/bin/grunt copy
 
 Customize the theme
 ===================
