@@ -17,7 +17,7 @@
       />
 
   <plone:static
-    directory="diazo_resources"
+    directory="theme"
     type="theme"
     />
 

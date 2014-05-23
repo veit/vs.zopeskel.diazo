@@ -9,8 +9,8 @@ module.exports = function (grunt) {
                     paths: {
                         'bootstrap-carousel': 'bower_components/bootstrap/js/carousel'
                     },
-                    name: "js/bootstrap",
-                    out: "diazo_resources/static/custom.js",
+                    name: "js/require",
+                    out: "static/js/require.js",
                     optimize: "none"
                 }
             }
@@ -18,25 +18,25 @@ module.exports = function (grunt) {
         less: {
             dist: {
                 options: {
-                    paths: ['bower_components/...', '../mockup/bower_components', '../mockup/less'],
+                    paths: ['bower_components/...',],
                     strictMath: false,
                     sourceMap: true,
                     outputSourceFiles: true,
-                    sourceMapURL: '++resource++diazo_resources/bootstrap.css.map',
-                    sourceMapFilename: 'diazo_resources/static/bootstrap.css.map'
+                    sourceMapFilename: 'less/custom.css.map'
+
                 },
                 files: {
-                    'diazo_resources/static/custom.css': 'less/custom.less',
-                    '../mockup/build/plone.min.css': '../mockup/less/plone.less',
+                    'static/css/custom.css': 'less/custom.less',
                 }
             }
         },
         copy: {
             bootstrap: {
                 files: [
-                    { expand: true, cwd: 'diazo_resources/', src: 'img/**', dest: 'diazo_resources/static/img/' },
-                    { expand: true, cwd: 'diazo_resources/', src: 'fonts/**', dest: 'diazo_resources/static/fonts/' },
-                    { expand: true, cwd: 'bower_components/bootstrap/', src: 'fonts/**', dest: 'diazo_resources/static/fonts/' }
+                    { expand: true, cwd: 'theme/', src: 'img/**', dest: 'static/'},
+                    { expand: true, cwd: 'theme/', src: 'fonts/**', dest: 'static/'},
+                    { expand: true, cwd: 'bower_components/bootstrap/', src: 'fonts/**', dest: 'static/',}
+
                 ]
             }
         }
