@@ -18,6 +18,7 @@
 
   <plone:static
     directory="theme"
+    name="${namespace_package}.${package}"
     type="theme"
     />
 

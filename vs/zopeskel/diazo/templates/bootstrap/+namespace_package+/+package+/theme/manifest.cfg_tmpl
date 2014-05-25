@@ -1,6 +1,9 @@
 [theme]
 title = $description
 description = Diazo Theme from ${namespace_package}.${package} package
+rules = /++theme++${namespace_package}.${package}/rules.xml
+prefix = /++theme++${namespace_package}.${package}
+doctype = <!DOCTYPE html>
 preview = preview.png
 
 [theme:parameters]
