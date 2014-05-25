@@ -9,7 +9,6 @@
     <!-- Rules for the standard Plone pages -->
     <rules css:if-content="#visual-portal-wrapper">
         
-        <notheme if="$ajax_load" />
         <theme href="/++theme++${namespace_package}.${package}/index.html" />
 
         <!-- Attributes -->
