@@ -13,8 +13,6 @@
 
         <!-- Attributes -->
         <copy attributes="*" theme="/html" content="/html"/>
-        <!-- Base tag -->
-        <before theme="/html/head/title" content="/html/head/base"/>
         <!-- Title -->
         <replace theme="/html/head/title" content="/html/head/title" />
         <!-- Pull in Plone Meta -->
