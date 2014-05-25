@@ -9,8 +9,7 @@ module.exports = function (grunt) {
                     paths: {
                         'bootstrap-carousel': 'bower_components/bootstrap/js/carousel'
                     },
-                    name: "js/require",
-                    out: "static/js/require.js",
+                    out: "theme/js/require.js",
                     optimize: "none"
                 }
             }
@@ -26,16 +25,14 @@ module.exports = function (grunt) {
 
                 },
                 files: {
-                    'static/css/custom.css': 'less/custom.less',
+                    'theme/css/custom.css': 'less/custom.less',
                 }
             }
         },
         copy: {
             bootstrap: {
                 files: [
-                    { expand: true, cwd: 'theme/', src: 'img/**', dest: 'static/'},
-                    { expand: true, cwd: 'theme/', src: 'fonts/**', dest: 'static/'},
-                    { expand: true, cwd: 'bower_components/bootstrap/', src: 'fonts/**', dest: 'static/',}
+                    { expand: true, cwd: 'bower_components/bootstrap/', src: 'fonts/**', dest: 'theme/',}
 
                 ]
             }
