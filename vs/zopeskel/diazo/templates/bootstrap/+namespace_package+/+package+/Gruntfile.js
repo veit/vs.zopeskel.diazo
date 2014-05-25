@@ -9,6 +9,7 @@ module.exports = function (grunt) {
                     paths: {
                         'bootstrap-carousel': 'bower_components/bootstrap/js/carousel'
                     },
+                    name: "js/require.js",
                     out: "theme/js/require.js",
                     optimize: "none"
                 }
