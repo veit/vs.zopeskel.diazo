@@ -38,7 +38,7 @@
              with rules that copy particular parts of the content into particular
              parts of your theme.
          -->
-        <after theme="body/h1" css:content="#visual-portal-wrapper" />
+        <before theme-children="/html/body" css:content="#visual-portal-wrapper" />
 
     </rules>
 </rules>
