@@ -36,11 +36,6 @@
         <drop content="body/script" />
         <after theme-children="html/body" content="html/body/script" method="raw" />
 
-        <!-- This rule pulls in the whole Plone layout. You'll typically replace ist
-             with rules that copy particular parts of the content into particular
-             parts of your theme.
-         -->
-        <before theme-children="/html/body" css:content="#visual-portal-wrapper" />
         <!-- Replace globalnav by navbar -->
         <replace theme-children="//*[@id='globalnav']" content-children="//*[@id='portal-globalnav']" />
         <!-- Search form in navbar -->
@@ -49,6 +44,13 @@
 
         <!-- Breadcrumbs -->
         <replace theme-children="//*[@id='breadcrumbs']" content-children="//*[@id='portal-breadcrumbs']/ol" />
+        <!-- Title -->
+        <replace theme-children="/html/body/div/h1" content-children="//*[@id='content']/header/h1" />
+        <!-- Description -->
+        <replace theme-children="//*[@id='description']" css:content-children=".description" />
+        <!-- Content -->
+        <replace theme="//*[@id='content']" content-children="//*[@id='content-core']" />
+
     </rules>
 </rules>
 
