@@ -44,6 +44,12 @@
 
         <!-- Breadcrumbs -->
         <replace theme-children="//*[@id='breadcrumbs']" content-children="//*[@id='portal-breadcrumbs']/ol" />
+
+        <!-- Left column -->
+        <replace theme-children="//*[@id='column-left']" content-children="//*[@id='portal-column-one']" />
+        <!-- Right column -->
+        <replace theme-children="//*[@id='column-right']" content-children="//*[@id='portal-column-two']" />
+
         <!-- Title -->
         <replace theme-children="/html/body/div/h1" content-children="//*[@id='content']/header/h1" />
         <!-- Description -->
