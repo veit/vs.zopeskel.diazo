@@ -43,6 +43,9 @@
         <before theme-children="/html/body" css:content="#visual-portal-wrapper" />
         <!-- Replace globalnav by navbar -->
         <replace theme-children="//*[@id='globalnav']" content-children="//*[@id='portal-globalnav']" />
+        <!-- Search form in navbar -->
+        <copy attributes="action" theme="//*[@id='searchGadget_form']" content="//*[@id='searchGadget_form']" />
+        <copy attributes="name value placeholder accesskey" theme="//*[@id='searchGadget']" content="//*[@id='searchGadget']" />
 
     </rules>
 </rules>
