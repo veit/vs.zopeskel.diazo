@@ -107,7 +107,7 @@ To genereate the theme you can switch to your newly created product annd run
 buildout, e.g.::
 
     $ cd src/my.theme
-    $ python bootstrap
+    $ python bootstrap.py
     $ ./bin/buildout
 
 Now you can start the instance and activate ``my.theme`` in *control panel*  →
