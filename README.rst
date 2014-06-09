@@ -151,6 +151,12 @@ Customize the theme
    If you want to define another grid, bootstrap provide many more
    opportunities, see `Bootstrap grid system <http://getbootstrap.com/css/#grid>`_.
 
+#. Overriding templates
+
+   You can easily change templates by copy them into the ``overrides`` folder,
+   e.g. from ``eggs/plone.app.layout-2.5.1-py2.7.egg/plone/app/layout/viewlets/footer.pt``
+   to ``src/my.theme/my/theme/overrides/plone.app.layout.viewlets.footer.pt``.
+
 Other resources
 ---------------
 

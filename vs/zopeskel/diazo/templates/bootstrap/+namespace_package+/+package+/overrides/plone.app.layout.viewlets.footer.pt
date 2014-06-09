@@ -1,7 +1,0 @@
-<p>
-    This footer may be updated by editing the
-    plone.app.layout.viewlets.footer.pt template in your theme's "overrides"
-    directory. Any Plone viewlet or skin template my be similarly overriden.
-</p>
-<div tal:on-error="nothing" tal:replace="structure provider:plone.footerportlets" />
-
