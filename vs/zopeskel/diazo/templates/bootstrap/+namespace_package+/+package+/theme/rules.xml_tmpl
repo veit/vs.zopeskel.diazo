@@ -31,8 +31,8 @@
         <after theme-children="/html/body" content="/html/head/script" />
 
         <!-- Move inline scripts in content to end of body -->
-        <drop content="body/script" />
-        <after theme-children="html/body" content="html/body/script" method="raw" />
+        <drop content="/html/body/script" />
+        <after theme-children="/html/body" content="/html/body/script" method="raw" />
 
         <!-- Replace globalnav by navbar -->
         <replace theme-children="//*[@id='globalnav']" content-children="//*[@id='portal-globalnav']" />
