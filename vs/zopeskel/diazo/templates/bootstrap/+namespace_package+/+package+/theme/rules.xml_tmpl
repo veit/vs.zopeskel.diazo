@@ -22,8 +22,6 @@
         <!-- dont use Plone icons, use the theme -->
         <drop css:content="head link[rel='apple-touch-icon']" />
         <drop css:content="head link[rel='shortcut icon']" />
-        <!-- CSS -->
-        <before theme-children="/html/head" content="/html/head/link" />
 
         <!-- Copy over the id/class attributes on the body tag.
              This is important e.g. for per-section styling -->
