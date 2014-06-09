@@ -47,6 +47,8 @@
         <copy attributes="action" theme="//*[@id='searchGadget_form']" content="//*[@id='searchGadget_form']" />
         <copy attributes="name value placeholder accesskey" theme="//*[@id='searchGadget']" content="//*[@id='searchGadget']" />
 
+        <!-- Breadcrumbs -->
+        <replace theme-children="//*[@id='breadcrumbs']" content-children="//*[@id='portal-breadcrumbs']/ol" />
     </rules>
 </rules>
 
