@@ -116,23 +116,61 @@ Now you can start the instance and activate ``my.theme`` in *control panel*  →
 Customize the theme
 ===================
 
+#. Change the bootstrap css instructions and fonts:
+
+   #. You can customize the bootstrap less variables e.g. in
+      ``src/my.theme/my/theme/bower_components/bootstrap/less/variables.less``.
+   #. In addition, you can write your own less instructions in
+      ``src/my.theme/my/theme/less/custom.less``.
+   #. Special fonts can be added in ``/bower_components/bootstrap/dist/fonts/``.
+   #. Finally the less files can be recompiled e.g. with::
+
+       $ cd src/my.theme/my/theme
+       $ ./node_modules/bower/bin/bower install
+       $ ./node_modules/grunt-cli/bin/grunt less
+       $ ./node_modules/grunt-cli/bin/grunt copy
+
+#. Change the bootstrap grid:
+
+   The initial grid is defined in ``my/theme/theme/index.html``::
+
+    <div class="container">
+      <div class="row">
+        <aside id="column-left" class="col-md-3">
+          <p>Left column</p>
+        </aside>
+        <article id="main" class="col-md-6" role="main">
+          …
+        </article>
+        <aside id="column-right" class="col-md-3">
+          <p>Right column</p>
+        </aside>
+      </div>
+    </div>
+
+   If you want to define another grid, bootstrap provide many more
+   opportunities, see `Bootstrap grid system <http://getbootstrap.com/css/#grid>`_.
+
+Other resources
+---------------
+
 ``diazo_resources``
--------------------
+^^^^^^^^^^^^^^^^^^^
 
 ``diazo_resources/static``
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``locales``
------------
+^^^^^^^^^^^
 
 ``profiles/default``
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 Usally the files ``public.css``, ``columns.css`` and ``portlets.css`` are not
 delivered with yout theme because of the TAL expression
 ``not: request/HTTP_X_THEME_ENABLED``.  
   
 ``overrides``
--------------
+^^^^^^^^^^^^^
 
 
