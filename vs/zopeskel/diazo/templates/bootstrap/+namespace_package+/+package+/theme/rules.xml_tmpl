@@ -13,6 +13,8 @@
 
         <!-- Attributes -->
         <copy attributes="*" theme="/html" content="/html"/>
+        <!-- Base tag -->
+        <before theme="/html/head/title" content="/html/head/base"/>
         <!-- Title -->
         <replace theme="/html/head/title" content="/html/head/title" />
         <!-- Pull in Plone Meta -->
@@ -39,6 +41,8 @@
              parts of your theme.
          -->
         <before theme-children="/html/body" css:content="#visual-portal-wrapper" />
+        <!-- Replace globalnav by navbar -->
+        <replace theme-children="//*[@id='globalnav']" content-children="//*[@id='portal-globalnav']" />
 
     </rules>
 </rules>
